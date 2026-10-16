@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CleanHome — Прибирання квартир у Південноукраїнську</title>
+<meta name="description" content="Професійне прибирання квартир у Південноукраїнську. Перевірені клінери, безпечна хімія, гарантія результату. Замовте прибирання онлайн.">
+<link rel="icon" type="image/svg+xml" href="/images/icons/mop.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#C9A84C;
+  --gold-hover:#dbb85a;
+  --gold-light:#b8953f;
+  --gold-ring:#f0e0a8;
+  --dark:#19191b;
+  --dark2:#1e1e1e;
+  --white:#ffffff;
+  --bg:#f7f7f5;
+  --text:#282828;
+  --text2:#6a6a6a;
+  --line-light:rgba(40,39,40,0.12);
+  --line-dark:rgba(255,255,255,0.12);
+  --tg:#00a2f2;
+  --viber:#7460f3;
+  --r-pill:100px;
+  --r-lg:50px;
+  --r-card:24px;
+  --r-quiz:40px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:10px;scroll-behavior:smooth}
+body{font-family:'Ubuntu',sans-serif;font-weight:400;line-height:1.3;color:var(--text);background:var(--white);overflow-x:hidden}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{border:none;background:none;cursor:pointer;font-family:inherit}
+ul{list-style:none}
+h1,h2,h3,h4{font-family:'Cormorant Infant',serif}
+
+/* UTIL */
+.tac{text-align:center}
+.gold{color:var(--gold)}
+.white{color:#fff}
+.ttu{text-transform:uppercase}
+.fade-in{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}
+.fade-in.visible{opacity:1;transform:none}
+
+/* BUTTONS */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6em;
+  padding:1.5rem 3.2rem;border-radius:var(--r-pill);
+  background:var(--gold);color:#fff;
+  font-family:'Ubuntu',sans-serif;font-size:1.3rem;font-weight:500;
+  text-transform:uppercase;letter-spacing:.15em;
+  border:none;cursor:pointer;position:relative;overflow:hidden;
+  transition:background .3s,transform .2s;white-space:nowrap;
+}
+.btn:hover{background:var(--gold-hover);transform:translateY(-1px)}
+.btn-blick{position:absolute;top:-50%;left:-60px;width:30px;height:300%;background:rgba(255,255,255,.25);transform:rotate(45deg);animation:blick 3.5s infinite}
+@keyframes blick{0%{left:-60px}30%,100%{left:120%}}
+.btn--sm{padding:1rem 2rem;font-size:1.1rem}
+.btn--outline{background:transparent;border:2px solid #fff;color:#fff}
+.btn--outline:hover{background:var(--gold);border-color:var(--gold)}
+.btn--dark-outline{background:transparent;border:2px solid var(--gold);color:var(--gold)}
+.btn--dark-outline:hover{background:var(--gold);color:#fff}
+
+/* INPUTS */
+.inp{
+  width:100%;padding:1.4rem 2rem;border-radius:var(--r-pill);
+  border:1.5px solid var(--line-light);background:#f4f4f4;
+  font-family:'Ubuntu',sans-serif;font-size:1.4rem;color:var(--text);
+  outline:none;transition:border .25s;
+}
+.inp:focus{border-color:var(--gold)}
+.inp--dark{background:#252525;color:#fff;border-color:rgba(255,255,255,.1)}
+.inp--dark::placeholder{color:rgba(255,255,255,.35)}
+.inp--dark:focus{border-color:var(--gold)}
+.area{border-radius:16px;resize:none;height:12rem}
+
+/* POLICY */
+.policy-row{display:flex;align-items:flex-start;gap:1rem;margin-top:1.2rem}
+.pcheck{
+  width:2rem;height:2rem;min-width:2rem;border-radius:5px;
+  border:1.5px solid var(--gold);background:var(--gold);
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;margin-top:.1rem;transition:background .2s;
+}
+.pcheck.off{background:transparent}
+.pcheck svg{width:1.1rem;height:1.1rem;display:block}
+.pcheck.off svg{display:none}
+.ptext{font-size:1.1rem;color:var(--text2);line-height:1.5}
+.ptext a{color:var(--gold);text-decoration:underline}
+
+/* CONTAINER */
+.container{max-width:1260px;margin:0 auto;padding:0 3rem}
+.section{padding:7rem 0}
+
+/* ONLINE DOT */
+.online::before{
+  content:'';display:inline-block;width:.7rem;height:.7rem;
+  border-radius:50%;background:#4caf50;margin-right:.6rem;
+  animation:pulse 2s infinite;vertical-align:middle;
+}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* ============ HEADER ============ */
+.header{
+  position:fixed;top:0;left:0;width:100%;z-index:900;
+  background:var(--dark);
+  padding: 1rem 0;
+  border-bottom:1px solid var(--line-dark);
+  transition:box-shadow .3s;
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.header-logo{font-family:'Cormorant Infant',serif;font-size:2rem;font-weight:700;color:#fff;flex-shrink:0}
+.header-logo span{color:var(--gold)}
+.header-nav{padding-top:3vw;padding-bottom:.5vw}
+.header-nav a{font-size: 14px;color:var(--bg);text-transform:uppercase;transition:color .3s}
+.header-nav-list{padding-top:1.042vw;letter-spacing: .28126vw;display:flex;align-items:center;justify-content:space-between;}
+.header-nav a:hover{color:var(--gold)}
+.header-contacts{display:flex; flex-direction:column;align-items:center;}
+.header-phone{color:#fff;font-size:2rem;font-weight:500;transition:color .3s}
+.header-phone:hover{color:var(--gold)}
+.header-socials{display:flex;gap:2rem}
+.soc{width:3rem;height:3rem;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .3s}
+.soc:hover{transform:scale(1.1)}
+.soc svg{width:1.5rem;height:1.5rem;fill:#fff}
+.soc--tg{background:var(--tg)}
+.soc--vi{background:var(--viber)}
+/* Burger */
+.burger{display:none;flex-direction:column;gap:5px;padding:5px;cursor:pointer}
+.burger span{display:block;width:24px;height:2px;background:#fff;transition:.3s}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+/* Mobile drawer */
+.drawer{position:fixed;inset:0 0 0 auto;width:75%;max-width:320px;background:var(--dark);z-index:950;transform:translateX(100%);transition:.4s ease;padding:7rem 2.5rem 2.5rem;display:flex;flex-direction:column;gap:2rem}
+.drawer.open{transform:translateX(0)}
+.drawer a{color:rgba(255,255,255,.8);font-size:1.6rem;text-transform:uppercase;letter-spacing:2px;padding:.8rem 0;border-bottom:1px solid var(--line-dark)}
+.drawer a:hover{color:var(--gold)}
+.doverlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:940;display:none}
+.doverlay.open{display:block}
+
+/* RIGHT WIDGET */
+.rwidget{
+  position:fixed;right:0;top:40%;z-index:800;
+  display:flex;flex-direction:column;gap:4px;
+}
+.rwbtn{
+  display:flex;align-items:center;gap:.8rem;
+  background:var(--gold);color:#fff;
+  padding:3rem 1rem 3rem 2rem;
+  border-radius:12px 0 0 12px;
+  font-family:'Ubuntu',sans-serif;font-size:1.1rem;font-weight:500;
+  white-space:nowrap;
+  transform:translateX(calc(100% - 4.2rem));
+  transition:transform .3s;
+  cursor:pointer;border:none;text-decoration:none;
+}
+.rwbtn:hover{transform:translateX(0)}
+.rwbtn svg{width:2rem;height:2rem;fill:#fff;flex-shrink:0}
+.rwbtn--call{background:#2e7d32}
+.rwbtn--tg{background:#0088cc}
+.rwbtn--order{background:var(--gold-light)}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;min-height:100vh;display:flex;flex-direction:column;
+  background:url('https://images.unsplash.com/photo-1758273705627-937374bfa978?w=1600&fit=crop&crop=entropy&q=80&auto=format') center/cover no-repeat;
+  padding-top:5.5rem;
+}
+.hero::before{content:'';position:absolute;inset:0;background:rgba(15,15,17,.72)}
+.hero-top{
+  position:relative;z-index:2;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.hero-top-pdf{
+  display:inline-flex;align-items:center;gap:.8rem;
+  background:#fff;color:var(--text);padding:.9rem 2.2rem;border-radius:var(--r-pill);
+  font-size:1.2rem;font-weight:500;transition:background .3s;
+}
+.hero-top-pdf:hover{background:var(--gold-ring)}
+.hero-top-pdf strong{color:var(--gold)}
+.hero-top-contacts{display:flex;align-items:center;gap:1.5rem}
+.hero-top-soc{display:flex;gap:.6rem}
+.hero-top-phone{font-size:2rem;font-weight:700;color:#fff;line-height:1}
+.hero-top-phone-sub{font-size:1.2rem;color:rgba(255,255,255,.8);margin-top:.2rem}
+.hero-body{
+  position:relative;z-index:2;flex:1;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:5rem 3rem 6rem;
+}
+.hero-h1{
+  font-family:'Cormorant Infant',serif;font-size:clamp(3.5rem,5.5vw,7rem);
+  font-weight:300;color:#fff;line-height:1.15;margin-bottom:3rem;
+  animation:fadeUp 1.2s both;
+}
+.hero-h1 strong{font-weight:700;color:var(--gold)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+.hero-cta-wrap{display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:4rem;animation:fadeUp 1.2s both .2s}
+.hero-cta-note{display:flex;align-items:center;gap:1rem;color:rgba(255,255,255,.7);font-size:1.3rem}
+.hero-cta-note svg{width:2rem;height:2rem;fill:var(--gold);flex-shrink:0}
+.hero-cta-note a{color:var(--gold)}
+.hero-feats{display:flex;gap:3rem;flex-wrap:wrap;justify-content:center;animation:fadeUp 1.2s both .4s}
+.hero-feat{display:flex;align-items:center;gap:.8rem}
+.hero-feat-ic{width:3.5rem;height:3.5rem;border-radius:50%;background:rgba(201,168,76,.18);border:1px solid rgba(201,168,76,.35);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hero-feat-ic svg{width:1.6rem;height:1.6rem;fill:var(--gold)}
+.hero-feat-txt{text-align:left}
+.hero-feat-txt strong{display:block;font-size:1.3rem;color:#fff;font-weight:500}
+.hero-feat-txt span{font-size:1.1rem;color:rgba(255,255,255,.6)}
+
+/* ============ QUIZ ============ */
+.quiz-section{background:#fff;padding:7rem 0}
+.quiz-head{text-align:center;margin-bottom:5rem}
+.quiz-head h2{font-family:'Cormorant Infant',serif;font-size:clamp(3rem,4vw,5.5rem);font-weight:700;line-height:1.15;margin-bottom:1.2rem}
+.quiz-head p{font-size:1.6rem;color:var(--text2)}
+.quiz-wrap{
+  display:grid;grid-template-columns:1fr 2fr;gap:3rem;
+  background:#fff;border-radius:var(--r-quiz);
+  box-shadow:0 4px 60px rgba(0,0,0,.1);overflow:hidden;
+}
+.quiz-left{
+  background:url('https://images.unsplash.com/photo-1691496550053-80260c93db8f?w=800&fit=crop&crop=entropy&q=80&auto=format') center/cover no-repeat;
+  position:relative;padding:3rem 2.5rem;
+  display:flex;flex-direction:column;justify-content:flex-end;min-height:52rem;
+}
+.quiz-left::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,12,.9) 50%,rgba(10,10,12,.5))}
+.quiz-left-cnt{position:relative;z-index:1}
+.quiz-left-cnt h3{font-family:'Cormorant Infant',serif;font-size:2.8rem;font-weight:300;color:#fff;margin-bottom:.8rem}
+.quiz-left-cnt h3 strong{font-weight:700}
+.quiz-left-cnt p{font-size:1.3rem;color:rgba(255,255,255,.65);line-height:1.6;margin-bottom:2rem}
+.quiz-badge{display:flex;align-items:center;gap:.8rem;padding:1.2rem 1.6rem;border-radius:var(--r-card);background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3)}
+.quiz-badge-text{font-size:1.2rem;color:#fff;line-height:1.5}
+.quiz-badge-text strong{color:var(--gold);display:block;font-size:1.4rem}
+
+.quiz-right{padding:3.5rem 3rem;display:flex;flex-direction:column;justify-content:center}
+.quiz-prog-label{font-size:1.1rem;color:var(--text2);text-transform:uppercase;letter-spacing:2px;margin-bottom:.8rem}
+.quiz-prog-bar{height:6px;background:#eee;border-radius:3px;overflow:hidden;margin-bottom:3rem}
+.quiz-prog-inner{height:100%;background:var(--gold);border-radius:3px;transition:width .4s}
+
+.quiz-step{display:none}
+.quiz-step.active{display:block}
+.quiz-q{font-family:'Cormorant Infant',serif;font-size:2.8rem;font-weight:600;margin-bottom:2.5rem;line-height:1.2}
+
+/* Card options (with images like Screenshot_8) */
+.quiz-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-bottom:2rem}
+.quiz-card{
+  border:2px solid var(--line-light);border-radius:var(--r-card);overflow:hidden;
+  cursor:pointer;transition:border-color .25s,box-shadow .25s;background:#fff;
+}
+.quiz-card:hover{border-color:var(--gold)}
+.quiz-card.sel{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,76,.2)}
+.quiz-card-img{height:13rem;object-fit:cover;width:100%}
+.quiz-card-label{padding:1rem 1.2rem;font-size:1.25rem;font-weight:500;text-align:center;line-height:1.3}
+.quiz-card-check{width:2rem;height:2rem;border-radius:50%;border:2px solid var(--line-light);background:#fff;display:flex;align-items:center;justify-content:center;margin:.6rem auto .2rem;transition:.25s}
+.quiz-card.sel .quiz-card-check{background:var(--gold);border-color:var(--gold)}
+.quiz-card.sel .quiz-card-check svg{display:block}
+.quiz-card-check svg{display:none;width:1rem;height:1rem;fill:#fff}
+
+/* Text options */
+.quiz-opts{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:2rem}
+.quiz-opt{
+  padding:1.3rem 1.6rem;border-radius:14px;
+  border:1.5px solid var(--line-light);background:#fff;
+  font-size:1.3rem;cursor:pointer;transition:.25s;text-align:left;
+  display:flex;align-items:center;gap:.8rem;
+}
+.quiz-opt:hover{border-color:var(--gold)}
+.quiz-opt.sel{border-color:var(--gold);background:rgba(201,168,76,.06);color:var(--gold)}
+.quiz-opt-ic{font-size:1.8rem}
+
+/* Slider step */
+.quiz-slider-wrap{margin-bottom:3rem}
+.quiz-slider-val{font-size:3rem;font-weight:700;font-family:'Cormorant Infant',serif;text-align:center;margin-bottom:1.5rem}
+.quiz-slider-val span{font-size:1.8rem;font-weight:400;color:var(--text2)}
+input[type=range]{
+  -webkit-appearance:none;width:100%;height:6px;
+  background:linear-gradient(to right,var(--gold) 0%,var(--gold) 50%,#e0e0e0 50%,#e0e0e0 100%);
+  border-radius:3px;outline:none;cursor:pointer;
+}
+input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none;width:2.2rem;height:2.2rem;border-radius:50%;
+  background:var(--gold);border:3px solid #fff;
+  box-shadow:0 0 0 2px var(--gold);cursor:pointer;
+}
+input[type=range]::-moz-range-thumb{
+  width:2.2rem;height:2.2rem;border-radius:50%;
+  background:var(--gold);border:3px solid #fff;
+  box-shadow:0 0 0 2px var(--gold);cursor:pointer;
+}
+.quiz-slider-limits{display:flex;justify-content:space-between;font-size:1.2rem;color:var(--text2);margin-top:.6rem}
+
+/* Quiz nav */
+.quiz-nav{display:flex;align-items:center;justify-content:space-between;margin-top:1rem}
+.quiz-back-btn{background:none;border:none;font-family:'Ubuntu',sans-serif;font-size:1.3rem;color:var(--text2);cursor:pointer;display:flex;align-items:center;gap:.4rem;transition:color .3s;padding:.5rem 0}
+.quiz-back-btn:hover{color:var(--gold)}
+
+/* Final / success */
+.quiz-final{display:none}
+.quiz-final-title{font-family:'Cormorant Infant',serif;font-size:3rem;font-weight:600;margin-bottom:.6rem}
+.quiz-final-sub{font-size:1.4rem;color:var(--text2);margin-bottom:2rem}
+.quiz-final .inp{margin-bottom:1rem}
+.quiz-success{display:none;text-align:center;padding:4rem 0}
+.quiz-success-ic{font-size:4rem;margin-bottom:1.5rem}
+.quiz-success h3{font-family:'Cormorant Infant',serif;font-size:3.5rem;font-weight:300;margin-bottom:.8rem}
+.quiz-success h3 strong{font-weight:700;color:var(--gold)}
+.quiz-success p{font-size:1.4rem;color:var(--text2)}
+
+/* ============ TARIFS ============ */
+.tarifs{background:var(--bg)}
+.section-tag{font-size:1.1rem;text-transform:uppercase;letter-spacing:.25em;color:var(--text2);margin-bottom:1rem}
+.section-h2{font-family:'Cormorant Infant',serif;font-size:clamp(3rem,4vw,5.5rem);font-weight:300;line-height:1.15;margin-bottom:3.5rem}
+.section-h2 strong{font-weight:700}
+.tarifs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.tarif-card{
+  border-radius:var(--r-card);overflow:hidden;position:relative;
+  height:48rem;background:center/cover no-repeat;cursor:pointer;
+}
+.tarif-card::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,12,.92) 45%,transparent);z-index:1;transition:opacity .35s}
+.tarif-card::after{content:'';position:absolute;inset:0;background:rgba(20,20,22,.6);z-index:2;opacity:0;transition:opacity .35s}
+.tarif-card:hover::after{opacity:1}
+.tc-1{background-image:url('https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&fit=crop&crop=entropy&q=80&auto=format')}
+.tc-2{background-image:url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&fit=crop&crop=entropy&q=80&auto=format')}
+.tc-3{background-image:url('https://images.unsplash.com/photo-1628744876497-eb30460be9f6?w=800&fit=crop&crop=entropy&q=80&auto=format')}
+.tarif-cnt{
+  position:absolute;bottom:0;left:0;right:0;z-index:3;
+  padding:2.5rem;transform:translateY(9rem);transition:transform .35s;
+}
+.tarif-card:hover .tarif-cnt{transform:translateY(0)}
+.tarif-badge-tag{display:inline-block;font-size:1.1rem;text-transform:uppercase;letter-spacing:.15em;color:var(--gold);border:1px solid rgba(201,168,76,.4);padding:.3rem 1rem;border-radius:var(--r-pill);margin-bottom:1rem}
+.tarif-name{font-family:'Cormorant Infant',serif;font-size:2.6rem;font-weight:600;color:#fff;margin-bottom:.4rem}
+.tarif-price{font-size:2rem;font-weight:700;color:var(--gold);margin-bottom:2rem}
+.tarif-list{margin-bottom:2.5rem;max-height:0;overflow:hidden;transition:max-height .4s}
+.tarif-card:hover .tarif-list{max-height:600px}
+.tarif-list li{font-size:1.25rem;color:rgba(255,255,255,.8);padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.1);display:flex;gap:.6rem}
+.tarif-list li::before{content:'✓';color:var(--gold);flex-shrink:0}
+
+/* ============ COMPARE ============ */
+.compare-section{background:#fff}
+.compare-desc{font-size:1.5rem;color:var(--text2);max-width:60rem;margin:0 auto 3.5rem;text-align:center;line-height:1.7}
+.compare-wrap{
+  position:relative;border-radius:var(--r-card);overflow:hidden;
+  height:50rem;user-select:none;
+}
+.cmp-before,.cmp-after{position:absolute;inset:0;background:center/cover no-repeat}
+.cmp-before{background-image:url('https://images.unsplash.com/photo-1644682533649-58c09f74b03c?w=1200&fit=crop&crop=entropy&q=80&auto=format')}
+.cmp-after{background-image:url('https://images.unsplash.com/photo-1724582586529-62622e50c0b3?w=1200&fit=crop&crop=entropy&q=80&auto=format');clip-path:inset(0 50% 0 0)}
+.cmp-handle{position:absolute;top:0;bottom:0;left:50%;width:4px;background:#fff;transform:translateX(-50%);z-index:10;cursor:ew-resize}
+.cmp-circle{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:5.5rem;height:5.5rem;border-radius:50%;background:var(--gold);
+  display:flex;align-items:center;justify-content:center;box-shadow:0 0 40px rgba(0,0,0,.3);
+}
+.cmp-circle svg{width:2rem;height:2rem;fill:#fff}
+.cmp-lbl{
+  position:absolute;top:2rem;
+  font-size:1.2rem;text-transform:uppercase;letter-spacing:.15em;
+  padding:.5rem 1.3rem;border-radius:var(--r-pill);font-weight:500;
+}
+.cmp-lbl-b{left:2rem;background:rgba(0,0,0,.6);color:#fff}
+.cmp-lbl-a{right:2rem;background:var(--gold);color:#fff}
+
+/* ============ WHY ============ */
+.why{background:var(--dark)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3.5rem}
+.why-card{background:#1e1e1e;border-radius:var(--r-card);padding:3rem 2.5rem;position:relative;overflow:hidden}
+.why-n{position:absolute;top:.5rem;right:1.5rem;font-family:'Cormorant Infant',serif;font-size:7rem;font-weight:700;color:rgba(255,255,255,.03);line-height:1}
+.why-ic{margin-bottom:2rem}
+.why-ic svg{width:3rem;height:3rem;fill:var(--gold)}
+.why-card h3{font-family:'Cormorant Infant',serif;font-size:2.2rem;font-weight:600;color:#fff;margin-bottom:.8rem}
+.why-card p{font-size:1.35rem;color:rgba(255,255,255,.55);line-height:1.7}
+
+/* ============ STEPS ============ */
+.steps-section{background:var(--bg)}
+.steps-row{display:flex;justify-content:space-between;gap:1rem;margin-top:4rem;position:relative}
+.steps-row::before{content:'';position:absolute;top:2rem;left:5%;right:5%;height:1px;border-top:2px dashed rgba(201,168,76,.3)}
+.step-item{flex:1;text-align:center;padding:0 .8rem;position:relative}
+.step-num{width:4rem;height:4rem;border-radius:50%;background:var(--gold);color:#fff;font-family:'Cormorant Infant',serif;font-size:1.8rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;position:relative;z-index:1}
+.step-item h4{font-family:'Cormorant Infant',serif;font-size:1.6rem;font-weight:600;margin-bottom:.5rem}
+.step-item p{font-size:1.2rem;color:var(--text2);line-height:1.6}
+
+/* ============ REVIEWS ============ */
+.reviews{background:#fff}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3.5rem}
+.rev-card{border:1.5px solid var(--line-light);border-radius:var(--r-card);padding:2.5rem}
+.rev-stars{display:flex;gap:.3rem;margin-bottom:1.2rem}
+.rev-stars svg{width:1.6rem;height:1.6rem;fill:var(--gold)}
+.rev-text{font-size:1.35rem;color:var(--text);line-height:1.75;font-style:italic;margin-bottom:2rem}
+.rev-author{display:flex;align-items:center;gap:1rem}
+.rev-av{width:4rem;height:4rem;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Infant',serif;font-size:1.8rem;font-weight:700;color:#fff;flex-shrink:0}
+.rev-name{font-size:1.25rem;font-weight:500}
+.rev-date{font-size:1.1rem;color:var(--text2)}
+
+/* ============ FAQ ============ */
+.faq-section{background:var(--bg)}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 4rem;margin-top:4rem}
+.faq-item{border-bottom:1.5px solid var(--line-light)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:2rem 0;cursor:pointer}
+.faq-q-txt{font-size:1.6rem;font-weight:500;line-height:1.4}
+.faq-arr{width:1.6rem;height:1.6rem;flex-shrink:0;color:var(--gold);transition:transform .3s}
+.faq-item.open .faq-arr{transform:rotate(180deg)}
+.faq-ans{max-height:0;overflow:hidden;transition:max-height .35s,padding .35s}
+.faq-item.open .faq-ans{max-height:500px;padding-bottom:2rem}
+.faq-ans p{font-size:1.45rem;color:var(--text2);line-height:1.75}
+
+/* ============ CALL / FORM ============ */
+.call-section{background:var(--dark);border-radius:4rem;margin:0 3rem 7rem;overflow:hidden}
+.call-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;padding:5rem 5rem;align-items:center}
+.call-left h2{font-family:'Cormorant Infant',serif;font-size:clamp(3rem,4vw,5.5rem);font-weight:300;color:#fff;margin-bottom:2.5rem;line-height:1.2}
+.call-left h2 strong{font-weight:700}
+.call-checks{display:flex;flex-direction:column;gap:1.2rem}
+.call-chk{display:flex;align-items:flex-start;gap:1rem}
+.call-chk-ic{color:var(--gold);flex-shrink:0;margin-top:.2rem}
+.call-chk-ic svg{width:1.6rem;height:1.6rem;fill:var(--gold)}
+.call-chk-txt{font-size:1.4rem;color:rgba(255,255,255,.8);line-height:1.5}
+.call-form-wrap{display:flex;flex-direction:column;gap:1rem}
+#callSuccess{display:none;text-align:center;padding:2rem 0}
+#callSuccess svg{width:4rem;height:4rem;fill:var(--gold);margin:0 auto 1.5rem}
+#callSuccess h3{font-family:'Cormorant Infant',serif;font-size:3rem;color:#fff;margin-bottom:.5rem}
+#callSuccess p{font-size:1.4rem;color:rgba(255,255,255,.6)}
+
+/* ============ CONTACTS ============ */
+.contacts{background:var(--dark);border-top:1px solid var(--line-dark)}
+.contacts-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:2.5rem;padding:4rem 0}
+.ci{display:flex;align-items:center;gap:1.2rem}
+.ci-ic svg{width:2.2rem;height:2.2rem;fill:var(--gold)}
+.ci-lbl{font-size:1rem;text-transform:uppercase;letter-spacing:.2em;color:rgba(255,255,255,.35);margin-bottom:.3rem}
+.ci-val{font-size:1.4rem;color:#fff;font-weight:500}
+.ci-socs{display:flex;gap:.8rem}
+.cisoc{width:3.8rem;height:3.8rem;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .3s}
+.cisoc:hover{transform:scale(1.08)}
+.cisoc svg{width:1.8rem;height:1.8rem;fill:#fff}
+
+/* ============ FOOTER ============ */
+.footer{background:var(--dark);padding:3rem 0;border-top:1px solid var(--line-dark)}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
+.footer-logo{font-family:'Cormorant Infant',serif;font-size:2rem;font-weight:700;color:#fff}
+.footer-logo span{color:var(--gold)}
+.footer-nav{display:flex;gap:2rem;flex-wrap:wrap}
+.footer-nav a{font-size:1.1rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.1em;transition:color .3s}
+.footer-nav a:hover{color:var(--gold)}
+.footer-meta{font-size:1rem;color:rgba(255,255,255,.25);text-align:right}
+
+/* TO TOP */
+.totop{position:fixed;right:2rem;bottom:2rem;z-index:700;width:4rem;height:4rem;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transition:opacity .3s;border:none}
+.totop.show{opacity:1}
+.totop svg{width:1.8rem;height:1.8rem;fill:#fff}
+
+/* MODAL */
+.modal-ov{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:1000;display:none;align-items:center;justify-content:center}
+.modal-ov.open{display:flex}
+.modal{background:var(--dark);border-radius:var(--r-card);padding:4rem;max-width:42rem;width:calc(100% - 4rem);position:relative;animation:fadeUp .4s both}
+.modal-x{position:absolute;top:1.5rem;right:1.5rem;width:3rem;height:3rem;border-radius:50%;background:rgba(255,255,255,.1);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.3s}
+.modal-x:hover{background:var(--gold)}
+.modal-x svg{width:1.2rem;height:1.2rem;fill:#fff}
+.modal h3{font-family:'Cormorant Infant',serif;font-size:3.5rem;font-weight:300;color:#fff;margin-bottom:.6rem;line-height:1.2}
+.modal h3 strong{font-weight:700}
+.modal p{font-size:1.3rem;color:rgba(255,255,255,.55);margin-bottom:2rem;line-height:1.6}
+.modal .inp--dark{margin-bottom:1rem}
+.modal-suc{display:none;text-align:center;padding:2rem 0}
+.modal-suc-ic{font-size:4rem;margin-bottom:1rem}
+.modal-suc h3{color:#fff}
+.modal-suc p{color:rgba(255,255,255,.55);font-size:1.3rem}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:900px){
+  .container{padding:0 2rem}
+  .section{padding:5rem 0}
+  html{font-size:9px}
+
+  .header-nav,.header-right{display:none}
+  .burger{display:flex}
+
+  .hero-top{display:none}
+  .hero-h1{font-size:4rem}
+  .hero-feats{gap:1.5rem}
+  .hero-feat-ic{width:3.2rem;height:3.2rem}
+  .hero-feat-ic svg{width:1.4rem;height:1.4rem}
+
+  .quiz-wrap{grid-template-columns:1fr}
+  .quiz-left{display:none}
+  .quiz-right{padding:3rem 2rem}
+  .quiz-cards{grid-template-columns:repeat(2,1fr)}
+
+  .tarifs-grid{grid-template-columns:1fr}
+  .tarif-card{height:40rem}
+  .tarif-card::after{opacity:1}
+  .tarif-cnt{transform:none}
+  .tarif-list{max-height:600px}
+
+  .compare-wrap{height:30rem}
+  .cmp-circle{width:4rem;height:4rem}
+  .cmp-circle svg{width:1.5rem;height:1.5rem}
+
+  .why-grid{grid-template-columns:1fr}
+  .steps-row{flex-direction:column;gap:2rem}
+  .steps-row::before{display:none}
+  .step-item{text-align:left;display:flex;align-items:flex-start;gap:1.5rem;padding:0}
+  .step-num{margin:0;flex-shrink:0}
+  .reviews-grid{grid-template-columns:1fr}
+  .faq-grid{grid-template-columns:1fr}
+
+  .call-section{margin:0 1.5rem 5rem;border-radius:2.5rem}
+  .call-inner{grid-template-columns:1fr;padding:3rem 2rem;gap:3rem}
+
+  .contacts-row{flex-direction:column;align-items:flex-start}
+  .footer-inner{flex-direction:column;align-items:center;text-align:center}
+  .footer-meta{text-align:center}
+
+  .rwidget{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ========= HEADER ========= -->
+<header class="header" id="hdr">
+  <div class="container">
+    <div class="header-inner">
+      <a href="#" class="header-logo">Clean<span>Home</span></a>
+      <p class="hero-top-phone-sub"><b>Прибирання квартир</b></br>в Південноукраїнську</p>
+      <a href="#quiz" class="btn btn--sm">Замовити прибирання</a>
+        <div class="header-contacts">
+          <p class="hero-top-phone-sub">Є питання? Пишіть нам!</p>
+          <div class="header-socials"> 
+          <a href="https://t.me/MarusyaOzkara" class="soc soc--tg" title="Telegram">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
+          </a>
+          <a href="#" class="soc soc--vi" title="Viber">
+            <img src="/images/icons/viber.png" alt="Viber">
+          </a>
+          </div>
+        </div>
+        <div class="header-contacts">
+        <a href="tel:+380XXXXXXXXX" class="header-phone">+380 XX XXX XX XX</a>
+        <p class="hero-top-phone-sub  online">Щоденно з 08:00 до 21:00</p>
+        </div>
+        
+      
+      <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- DRAWER -->
+<div class="doverlay" id="doverlay"></div>
+<nav class="drawer" id="drawer">
+  <a href="#tarifs">Тарифи</a>
+  <a href="#why">Про нас</a>
+  <a href="#steps">Як працюємо</a>
+  <a href="#faq">Часті питання</a>
+  <a href="#contacts">Контакти</a>
+  <a href="tel:+380XXXXXXXXX">+380 XX XXX XX XX</a>
+</nav>
+
+<!-- RIGHT WIDGET -->
+<div class="rwidget">
+  <a href="tel:+380XXXXXXXXX" class="rwbtn rwbtn--call">
+    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    Передзвонити нам
+  </a>
+  <a href="https://t.me/MarusyaOzkara" class="rwbtn rwbtn--tg" target="_blank">
+    <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
+    Написати нам
+  </a>
+  <a href="#quiz" class="rwbtn rwbtn--order">
+    <img src="/images/icons/calculator.svg" width="18" alt="Розрахувати вартість">
+    Розрахувати вартість
+  </a>
+</div>
+
+<!-- ========= HERO ========= -->
+<section class="hero" id="home">
+  <!-- Top bar like newroom -->
+  <div class="hero-top">
+    <div class="container">
+        <nav class="header-nav">
+            <ul class="header-nav-list">
+                <li><a href="#tarifs">Тарифи</a></li>
+                <li><a href="#why">Наша команда</a></li>
+                <li><a href="#steps">Як працюємо</a></li>
+                <li><a href="#faq">Часті питання</a></li>
+                <li><a href="#contacts">Контакти</a></li>
+            </ul>
+        </nav>
+        
+      </nav>
+    </div>
+  </div>
+
+  <div class="hero-body">
+    <h1 class="hero-h1">Чистота, яку<br><strong>хочеться відчувати.</strong></h1>
+    <div class="hero-cta-wrap">
+      <a href="#quiz" class="btn" style="font-size:1.5rem;padding:1.8rem 4rem">
+        <span class="btn-blick"></span>
+        Розрахувати вартість →
+      </a>
+      <a href="#call" class="btn btn--outline" style="font-size:1.5rem;padding:1.8rem 4rem">Замовити прибирання</a>
+    </div>
+    <div class="hero-cta-note">
+      <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm.01 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+      Вишлемо розрахунок вартості по кожному виду робіт
+    </div>
+    <div class="hero-feats" style="margin-top:4rem">
+      <div class="hero-feat">
+        <div class="hero-feat-ic"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 13l-3-3 1.4-1.4 1.6 1.6 4.6-4.6L16 8l-6 6z"/></svg></div>
+        <div class="hero-feat-txt"><strong>Перевірені клінери</strong><span>Договір та страхування</span></div>
+      </div>
+      <div class="hero-feat">
+        <div class="hero-feat-ic"><svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 19.82L5.71 21c1-1.73 2.55-4.37 5.29-6.04-.51 1.04-.87 2.2-.87 3.54 0 3.31 2.69 6 6 6s6-2.69 6-6c0-5.31-4.03-5.5-4-10z"/></svg></div>
+        <div class="hero-feat-txt"><strong>Безпечна хімія</strong><span>Для дітей і тварин</span></div>
+      </div>
+      <div class="hero-feat">
+        <div class="hero-feat-ic"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+        <div class="hero-feat-txt"><strong>Гарантія результату</strong><span>Повторний виїзд безкоштовно</span></div>
+      </div>
+      <div class="hero-feat">
+        <div class="hero-feat-ic"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg></div>
+        <div class="hero-feat-txt"><strong>Зручний час</strong><span>7 днів на тиждень</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= QUIZ ========= -->
+<section class="quiz-section" id="quiz">
+  <div class="container">
+    <div class="quiz-head">
+      <h2>Розрахуйте <em style="font-style:normal">вартість</em> прибирання<br>вашої квартири</h2>
+      <p>Це безкоштовно і ні до чого не зобов'язує</p>
+    </div>
+    <div class="quiz-wrap">
+      <!-- LEFT -->
+      <div class="quiz-left">
+        <div class="quiz-left-cnt">
+          <h3>Виберіть відповідь<br><strong>та натисніть далі</strong></h3>
+          <p>Наприкінці тесту ви дізнаєтесь вартість з точністю 90% та отримаєте пропозицію на перше замовлення</p>
+          <div class="quiz-badge">
+            <div class="quiz-badge-text">
+              <strong>🎁 Знижка 10%</strong>
+              На перше замовлення при онлайн-записі
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- RIGHT -->
+      <div class="quiz-right">
+        <div class="quiz-prog-label">Ви відповідаєте на <strong id="qNum">1</strong> питання із <strong>5</strong></div>
+        <div class="quiz-prog-bar"><div class="quiz-prog-inner" id="qBar" style="width:20%"></div></div>
+
+        <!-- STEP 1: type with images -->
+        <div class="quiz-step active" id="qs1">
+          <div class="quiz-q">Який тип прибирання вас цікавить?</div>
+          <div class="quiz-cards" id="qcards1">
+            <div class="quiz-card" data-val="standard">
+              <img class="quiz-card-img" src="https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=400&fit=crop&crop=entropy&q=80&auto=format" alt="Стандартне">
+              <div class="quiz-card-label">Стандартне прибирання</div>
+              <div class="quiz-card-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg></div>
+            </div>
+            <div class="quiz-card" data-val="general">
+              <img class="quiz-card-img" src="https://images.unsplash.com/photo-1753605788101-04d1e653e74a?w=400&fit=crop&crop=entropy&q=80&auto=format" alt="Генеральне">
+              <div class="quiz-card-label">Генеральне прибирання</div>
+              <div class="quiz-card-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg></div>
+            </div>
+            <div class="quiz-card" data-val="repair">
+              <img class="quiz-card-img" src="https://images.unsplash.com/photo-1595524362625-fcbe45feafa0?w=400&fit=crop&crop=entropy&q=80&auto=format" alt="Після ремонту">
+              <div class="quiz-card-label">Після ремонту</div>
+              <div class="quiz-card-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg></div>
+            </div>
+          </div>
+          <div class="quiz-nav">
+            <span></span>
+            <button class="btn" id="qnext1">Далі ›››</button>
+          </div>
+        </div>
+
+        <!-- STEP 2: slider area -->
+        <div class="quiz-step" id="qs2">
+          <div class="quiz-q">Вкажіть загальну площу, кв.м</div>
+          <div class="quiz-slider-wrap">
+            <div class="quiz-slider-val" id="sliderVal">50 <span>м²</span></div>
+            <input type="range" id="areaSlider" min="20" max="300" value="50">
+            <div class="quiz-slider-limits"><span>20 м²</span><span>300 м²</span></div>
+          </div>
+          <div class="quiz-nav">
+            <button class="quiz-back-btn" data-go="1">← Назад</button>
+            <button class="btn" id="qnext2">Далі ›››</button>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="quiz-step" id="qs3">
+          <div class="quiz-q">Є домашні тварини?</div>
+          <div class="quiz-opts">
+            <button class="quiz-opt" data-val="no"><span class="quiz-opt-ic">✅</span> Ні</button>
+            <button class="quiz-opt" data-val="yes"><span class="quiz-opt-ic">🐾</span> Так</button>
+          </div>
+          <div class="quiz-nav">
+            <button class="quiz-back-btn" data-go="2">← Назад</button>
+            <button class="btn" id="qnext3">Далі ›››</button>
+          </div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="quiz-step" id="qs4">
+          <div class="quiz-q">Коли зручно провести прибирання?</div>
+          <div class="quiz-opts">
+            <button class="quiz-opt" data-val="asap"><span class="quiz-opt-ic">⚡</span> Якнайшвидше</button>
+            <button class="quiz-opt" data-val="week"><span class="quiz-opt-ic">📅</span> Цього тижня</button>
+            <button class="quiz-opt" data-val="month"><span class="quiz-opt-ic">🗓️</span> Цього місяця</button>
+            <button class="quiz-opt" data-val="plan"><span class="quiz-opt-ic">📆</span> Планово / регулярно</button>
+          </div>
+          <div class="quiz-nav">
+            <button class="quiz-back-btn" data-go="3">← Назад</button>
+            <button class="btn" id="qnext4">Далі ›››</button>
+          </div>
+        </div>
+
+        <!-- STEP 5 -->
+        <div class="quiz-step" id="qs5">
+          <div class="quiz-q">Що для вас найважливіше?</div>
+          <div class="quiz-opts">
+            <button class="quiz-opt" data-val="price"><span class="quiz-opt-ic">💰</span> Доступна ціна</button>
+            <button class="quiz-opt" data-val="speed"><span class="quiz-opt-ic">🚀</span> Швидкість</button>
+            <button class="quiz-opt" data-val="quality"><span class="quiz-opt-ic">🏆</span> Висока якість</button>
+            <button class="quiz-opt" data-val="trust"><span class="quiz-opt-ic">🤝</span> Надійність і довіра</button>
+          </div>
+          <div class="quiz-nav">
+            <button class="quiz-back-btn" data-go="4">← Назад</button>
+            <button class="btn" id="qnext5">Отримати розрахунок →</button>
+          </div>
+        </div>
+
+        <!-- FINAL -->
+        <div class="quiz-final" id="qfinal">
+          <div class="quiz-final-title">Залишився<br><span class="gold">один крок</span></div>
+          <div class="quiz-final-sub">Вкажіть телефон — надішлемо розрахунок протягом 15 хвилин</div>
+          <input type="tel" class="inp" placeholder="+380 XX XXX XX XX">
+          <input type="text" class="inp" placeholder="Ваше ім'я (необов'язково)" style="margin-top:.8rem">
+          <div class="policy-row">
+            <div class="pcheck" id="qpol"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+            <div class="ptext">Погоджуюсь з <a href="#">Політикою конфіденційності</a></div>
+          </div>
+          <button class="btn" style="width:100%;margin-top:2rem;justify-content:center" id="qsubmit">
+            <span class="btn-blick"></span>Отримати розрахунок
+          </button>
+        </div>
+        <!-- SUCCESS -->
+        <div class="quiz-success" id="qsuccess">
+          <div class="quiz-success-ic">✅</div>
+          <h3>Дякуємо!<br><strong>Очікуйте дзвінка</strong></h3>
+          <p>Зв'яжемось з вами протягом 15 хвилин</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= TARIFS ========= -->
+<section class="section tarifs" id="tarifs">
+  <div class="container">
+    <div class="section-tag">Наші тарифи</div>
+    <h2 class="section-h2">Оберіть свій<br><strong>формат чистоти</strong></h2>
+    <div class="tarifs-grid">
+      <div class="tarif-card tc-1 fade-in">
+        <div class="tarif-cnt">
+          <div class="tarif-badge-tag">Найпопулярніший</div>
+          <div class="tarif-name">Стандартне</div>
+          <div class="tarif-price">від 800 ₴</div>
+          <ul class="tarif-list">
+            <li>Підлога, пил, дзеркала</li>
+            <li>Кухня та сантехніка</li>
+            <li>Виніс сміття</li>
+            <li>Заправка ліжок</li>
+            <li>Тривалість: 2–3 год</li>
+          </ul>
+          <button class="btn btn--outline" onclick="openModal()">Замовити</button>
+        </div>
+      </div>
+      <div class="tarif-card tc-2 fade-in">
+        <div class="tarif-cnt">
+          <div class="tarif-badge-tag">Глибоке очищення</div>
+          <div class="tarif-name">Генеральне</div>
+          <div class="tarif-price">від 1 800 ₴</div>
+          <ul class="tarif-list">
+            <li>Все зі стандартного</li>
+            <li>Миття вікон зсередини</li>
+            <li>Холодильник, духовка</li>
+            <li>Балкон і комори</li>
+            <li>Тривалість: 4–6 год</li>
+          </ul>
+          <button class="btn btn--outline" onclick="openModal()">Замовити</button>
+        </div>
+      </div>
+      <div class="tarif-card tc-3 fade-in">
+        <div class="tarif-cnt">
+          <div class="tarif-badge-tag">Після будівельних робіт</div>
+          <div class="tarif-name">Після ремонту</div>
+          <div class="tarif-price">від 3 500 ₴</div>
+          <ul class="tarif-list">
+            <li>Видалення будівельного пилу</li>
+            <li>Очищення плитки та швів</li>
+            <li>Вікна зовні та всередині</li>
+            <li>Вивіз сміття</li>
+            <li>Тривалість: від 6 год</li>
+          </ul>
+          <button class="btn btn--outline" onclick="openModal()">Замовити</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= COMPARE ========= -->
+<section class="section compare-section" id="compare">
+  <div class="container">
+    <div class="section-tag tac">До і після</div>
+    <h2 class="section-h2 tac">Результат, який<br><strong>говорить сам за себе</strong></h2>
+    <p class="compare-desc">Перетягніть повзунок, щоб побачити різницю. Ми повертаємо вашому дому той вигляд, яким ви хочете його бачити щодня.</p>
+    <div class="compare-wrap" id="cmpWrap">
+      <div class="cmp-before"></div>
+      <div class="cmp-after" id="cmpAfter"></div>
+      <div class="cmp-handle" id="cmpHandle">
+        <div class="cmp-circle">
+          <svg viewBox="0 0 24 24"><path d="M8 5l-7 7 7 7V5zm8 0v14l7-7-7-7z"/></svg>
+        </div>
+      </div>
+      <div class="cmp-lbl cmp-lbl-b">ДО</div>
+      <div class="cmp-lbl cmp-lbl-a">ПІСЛЯ</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= WHY ========= -->
+<section class="section why" id="why">
+  <div class="container">
+    <div class="section-tag" style="color:rgba(255,255,255,.4)">Чому обирають нас</div>
+    <h2 class="section-h2 white">Ми дбаємо про<br><strong>кожну деталь</strong></h2>
+    <div class="why-grid">
+      <div class="why-card fade-in"><div class="why-n">01</div><div class="why-ic"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 13l-3-3 1.4-1.4 1.6 1.6 4.6-4.6L16 8l-6 6z"/></svg></div><h3>Перевірені клінери</h3><p>Кожен клінер проходить перевірку документів, навчання та інструктаж. Ми укладаємо договір і несемо повну відповідальність.</p></div>
+      <div class="why-card fade-in"><div class="why-n">02</div><div class="why-ic"><svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 19.82L5.71 21c1-1.73 2.55-4.37 5.29-6.04-.51 1.04-.87 2.2-.87 3.54 0 3.31 2.69 6 6 6s6-2.69 6-6c0-5.31-4.03-5.5-4-10z"/></svg></div><h3>Безпечна хімія</h3><p>Лише сертифіковані засоби, безпечні для дітей, домашніх тварин та алергіків. Без різких запахів і агресивних компонентів.</p></div>
+      <div class="why-card fade-in"><div class="why-n">03</div><div class="why-ic"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div><h3>Гарантія результату</h3><p>Якщо щось не сподобалось — приїдемо і виправимо безкоштовно протягом 24 годин. Без суперечок і зайвих запитань.</p></div>
+      <div class="why-card fade-in"><div class="why-n">04</div><div class="why-ic"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg></div><h3>Зручний графік</h3><p>Працюємо 7 днів на тиждень, з 8:00 до 21:00. Замовте онлайн — приїдемо у зручний для вас час.</p></div>
+      <div class="why-card fade-in"><div class="why-n">05</div><div class="why-ic"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><h3>Фото-звіт</h3><p>Після кожного прибирання надсилаємо фото результату. Ви завжди знаєте, що відбувається у вашому домі.</p></div>
+      <div class="why-card fade-in"><div class="why-n">06</div><div class="why-ic"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div><h3>Страхування</h3><p>Всі роботи застраховані. У разі випадкового пошкодження майна — компенсуємо збитки повністю і без затримок.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= STEPS ========= -->
+<section class="section steps-section" id="steps">
+  <div class="container">
+    <div class="section-tag">Як це працює</div>
+    <h2 class="section-h2">Від заявки до<br><strong>сяючої чистоти</strong></h2>
+    <div class="steps-row">
+      <div class="step-item"><div class="step-num">1</div><div><h4>Залиште заявку</h4><p>Заповніть форму або зателефонуйте — займе 2 хвилини</p></div></div>
+      <div class="step-item"><div class="step-num">2</div><div><h4>Розрахунок ціни</h4><p>Менеджер зв'яжеться протягом 15 хвилин і уточнить деталі</p></div></div>
+      <div class="step-item"><div class="step-num">3</div><div><h4>Підтвердіть час</h4><p>Оберіть зручний день — ми підлаштуємося під вас</p></div></div>
+      <div class="step-item"><div class="step-num">4</div><div><h4>Клінер приїжджає</h4><p>З усім необхідним обладнанням та засобами</p></div></div>
+      <div class="step-item"><div class="step-num">5</div><div><h4>Прибирання</h4><p>Якісно виконуємо роботу за погодженим чек-листом</p></div></div>
+      <div class="step-item"><div class="step-num">6</div><div><h4>Фото і оплата</h4><p>Фото результату. Оплата після роботи — готівкою або карткою</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= REVIEWS ========= -->
+<section class="section reviews" id="reviews">
+  <div class="container">
+    <div class="section-tag">Відгуки клієнтів</div>
+    <h2 class="section-h2">Що кажуть<br><strong>наші клієнти</strong></h2>
+    <div class="reviews-grid">
+      <div class="rev-card fade-in">
+        <div class="rev-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p class="rev-text">«Замовила генеральне прибирання після ремонту. Клінер приїхала вчасно, з усім необхідним. Квартира сяє! Навіть знімала плінтуси — дуже детально. Рекомендую всім!»</p>
+        <div class="rev-author"><div class="rev-av">О</div><div><div class="rev-name">Олена Ковальчук</div><div class="rev-date">Генеральне прибирання · Жовтень 2026</div></div></div>
+      </div>
+      <div class="rev-card fade-in">
+        <div class="rev-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p class="rev-text">«Користуюсь щотижня вже 4 місяці. Дуже зручно — один дзвінок, і через день вдома ідеальний порядок. Клінери ввічливі, акуратні. Кішка не боїться — значить хімія справді безпечна!»</p>
+        <div class="rev-author"><div class="rev-av">М</div><div><div class="rev-name">Максим Бондаренко</div><div class="rev-date">Стандартне прибирання · Вересень 2026</div></div></div>
+      </div>
+      <div class="rev-card fade-in">
+        <div class="rev-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p class="rev-text">«Замовила прибирання перед здачею квартири. Зробили за 5 годин — орендарі були в захваті від чистоти. Точно буду звертатись ще і всім рекомендую!»</p>
+        <div class="rev-author"><div class="rev-av">І</div><div><div class="rev-name">Ірина Савченко</div><div class="rev-date">Генеральне прибирання · Жовтень 2026</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= FAQ ========= -->
+<section class="section faq-section" id="faq">
+  <div class="container">
+    <div class="section-tag">Часті питання</div>
+    <h2 class="section-h2">Відповіді на<br><strong>ваші питання</strong></h2>
+    <div class="faq-grid">
+      <div class="faq-item"><div class="faq-q"><div class="faq-q-txt">Чи потрібно бути вдома під час прибирання?</div><svg class="faq-arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="faq-ans"><p>Ні, не обов'язково. Ви можете залишити ключі або використати сейф для ключів. Клінер увійде та вийде без вашої присутності, а після роботи надішле фото-звіт.</p></div></div>
+      <div class="faq-item"><div class="faq-q"><div class="faq-q-txt">Які засоби ви використовуєте?</div><svg class="faq-arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="faq-ans"><p>Лише сертифіковані професійні засоби відомих брендів. Всі вони безпечні для дітей, тварин та алергіків, не мають різких запахів.</p></div></div>
+      <div class="faq-item"><div class="faq-q"><div class="faq-q-txt">Що якщо щось пошкодили під час прибирання?</div><svg class="faq-arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="faq-ans"><p>Всі наші клінери застраховані. У разі випадкового пошкодження майна ми повністю відшкодуємо збитки. Такі випадки вкрай рідкісні, але ви завжди захищені.</p></div></div>
+      <div class="faq-item"><div class="faq-q"><div class="faq-q-txt">Скільки часу займає прибирання?</div><svg class="faq-arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="faq-ans"><p>Стандартне — 2–3 год, генеральне — 4–6 год, після ремонту — від 6 год. Точний час залежить від площі та стану квартири.</p></div></div>
+      <div class="faq-item"><div class="faq-q"><div class="faq-q-txt">Як відбувається оплата?</div><svg class="faq-arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="faq-ans"><p>Оплата після виконання роботи — готівкою або карткою. Ніяких передоплат. Ви платите лише коли задоволені результатом.</p></div></div>
+      <div class="faq-item"><div class="faq-q"><div class="faq-q-txt">Чи можна замовити регулярне прибирання?</div><svg class="faq-arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="faq-ans"><p>Так! При регулярних замовленнях — знижка 10–15%. Ми закріпимо за вами одного клінера для зручності і звички до вашого дому.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= CALL ========= -->
+<section id="call">
+  <div class="call-section">
+    <div class="call-inner">
+      <div class="call-left">
+        <h2>Замовити<br><strong>прибирання</strong></h2>
+        <div class="call-checks">
+          <div class="call-chk"><div class="call-chk-ic"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div><div class="call-chk-txt">Відповімо протягом 15 хвилин</div></div>
+          <div class="call-chk"><div class="call-chk-ic"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div><div class="call-chk-txt">Погодимо зручний час</div></div>
+          <div class="call-chk"><div class="call-chk-ic"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div><div class="call-chk-txt">Знижка 10% на перше прибирання</div></div>
+          <div class="call-chk"><div class="call-chk-ic"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div><div class="call-chk-txt">Оплата лише після роботи</div></div>
+        </div>
+      </div>
+      <div class="call-form-wrap" id="callForm">
+        <input type="text" class="inp inp--dark" placeholder="Ваше ім'я">
+        <input type="tel" class="inp inp--dark" placeholder="+380 XX XXX XX XX">
+        <textarea class="inp inp--dark area" placeholder="Коментар (необов'язково)"></textarea>
+        <div class="policy-row">
+          <div class="pcheck" id="cpol"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          <div class="ptext" style="color:rgba(255,255,255,.45)">Погоджуюсь з <a href="#" style="color:var(--gold)">Політикою конфіденційності</a></div>
+        </div>
+        <a href="https://t.me/MarusyaOzkara" class="btn" style="justify-content:center" id="callBtn">
+          <span class="btn-blick"></span>
+          Замовити прибирання
+        </a>
+      </div>
+      <div id="callSuccess">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        <h3 style="font-family:'Cormorant Infant',serif;font-size:3.5rem;color:#fff;margin-bottom:.5rem">Дякуємо!</h3>
+        <p style="font-size:1.5rem;color:rgba(255,255,255,.6)">Зв'яжемось найближчим часом.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= CONTACTS ========= -->
+<section class="contacts" id="contacts">
+  <div class="container">
+    <div class="contacts-row">
+      <div class="ci"><div class="ci-ic"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div><div><div class="ci-lbl">Телефон</div><a href="tel:+380XXXXXXXXX" class="ci-val">+380 XX XXX XX XX</a></div></div>
+      <div class="ci"><div class="ci-ic"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div><div><div class="ci-lbl">Email</div><a href="mailto:info@cleanhome.com.ua" class="ci-val">info@cleanhome.com.ua</a></div></div>
+      <div class="ci"><div class="ci-ic"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div><div><div class="ci-lbl">Місто</div><div class="ci-val">Київ, Україна</div></div></div>
+      <div>
+        <div class="ci-lbl" style="color:rgba(255,255,255,.35);font-size:1rem;text-transform:uppercase;letter-spacing:.2em;margin-bottom:.8rem">Соцмережі</div>
+        <div class="ci-socs">
+          <a href="https://t.me/MarusyaOzkara" class="cisoc" style="background:#0088cc" title="Telegram">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
+          </a>
+          <a href="#" class="cisoc" style="background:#010101" title="TikTok">
+            <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.11a8.16 8.16 0 004.77 1.52V7.18a4.85 4.85 0 01-1-.49z"/></svg>
+          </a>
+          <a href="#" class="cisoc" style="background:#e1306c" title="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= FOOTER ========= -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">Clean<span>Home</span></div>
+      <nav class="footer-nav">
+        <a href="#tarifs">Тарифи</a><a href="#why">Про нас</a><a href="#steps">Як працюємо</a><a href="#faq">FAQ</a><a href="#contacts">Контакти</a>
+      </nav>
+      <div class="footer-meta">
+        <div>© <span id="yr"></span> CleanHome. Всі права захищені.</div>
+        <div>Фото: Unsplash</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- TO TOP -->
+<button class="totop" id="totop" aria-label="Вгору">
+  <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+</button>
+
+<!-- MODAL -->
+<div class="modal-ov" id="modal">
+  <div class="modal">
+    <button class="modal-x" onclick="closeModal()"><svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></button>
+    <div id="mform">
+      <h3>Замовити<br><strong>прибирання</strong></h3>
+      <p>Залиште контакти — зателефонуємо протягом 15 хвилин</p>
+      <input type="text" class="inp inp--dark" placeholder="Ваше ім'я">
+      <input type="tel" class="inp inp--dark" placeholder="+380 XX XXX XX XX">
+      <div class="policy-row">
+        <div class="pcheck" id="mpol"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <div class="ptext" style="color:rgba(255,255,255,.45)">Погоджуюсь з <a href="#" style="color:var(--gold)">Політикою конфіденційності</a></div>
+      </div>
+      <a href="https://t.me/MarusyaOzkara" class="btn" style="width:100%;margin-top:2rem;justify-content:center">
+        <span class="btn-blick"></span>Замовити прибирання
+      </a>
+    </div>
+    <div class="modal-suc" id="msuc">
+      <div class="modal-suc-ic">✅</div>
+      <h3 style="color:#fff">Дякуємо!<br><strong style="color:var(--gold)">Зателефонуємо</strong></h3>
+      <p>Зв'яжемось найближчим часом</p>
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+// HEADER shadow
+window.addEventListener('scroll',()=>{
+  document.getElementById('hdr').style.boxShadow=scrollY>60?'0 2px 24px rgba(0,0,0,.4)':'none';
+  document.getElementById('totop').classList.toggle('show',scrollY>400);
+});
+document.getElementById('totop').addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+
+// BURGER
+const burger=document.getElementById('burger'),drawer=document.getElementById('drawer'),dov=document.getElementById('doverlay');
+function toggleDrawer(){burger.classList.toggle('open');drawer.classList.toggle('open');dov.classList.toggle('open');document.body.style.overflow=drawer.classList.contains('open')?'hidden':'';}
+burger.addEventListener('click',toggleDrawer);
+dov.addEventListener('click',toggleDrawer);
+drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{if(drawer.classList.contains('open'))toggleDrawer();}));
+
+// FADE IN
+new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');} });},{threshold:.12}).observe||null;
+const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});},{threshold:.12});
+document.querySelectorAll('.fade-in').forEach(el=>io.observe(el));
+
+// SMOOTH SCROLL
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',function(e){
+  const id=this.getAttribute('href').slice(1);if(!id)return;
+  const el=document.getElementById(id);if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth'});}
+}));
+
+// POLICY CHECKS — pre-checked
+document.querySelectorAll('.pcheck').forEach(ch=>{
+  ch.addEventListener('click',()=>ch.classList.toggle('off'));
+});
+
+// QUIZ
+let step=1;
+const total=5;
+function goStep(n){
+  document.querySelectorAll('.quiz-step').forEach(s=>s.classList.remove('active'));
+  const target=document.getElementById('qs'+n);
+  if(target){target.classList.add('active');}
+  document.getElementById('qfinal').style.display='none';
+  step=n;
+  document.getElementById('qNum').textContent=n;
+  document.getElementById('qBar').style.width=(n/total*100)+'%';
+}
+function nextStep(from){
+  if(from===1){
+    const sel=document.querySelector('#qs1 .quiz-card.sel');
+    if(!sel)return;
+  } else {
+    const sel=document.querySelector('#qs'+from+' .quiz-opt.sel');
+    if(!sel&&from!==2)return;
+  }
+  if(from<total){goStep(from+1);}
+  else{
+    document.querySelectorAll('.quiz-step').forEach(s=>s.classList.remove('active'));
+    document.getElementById('qfinal').style.display='block';
+    document.getElementById('qBar').style.width='100%';
+  }
+}
+for(let i=1;i<=total;i++){const b=document.getElementById('qnext'+i);if(b)b.addEventListener('click',()=>nextStep(i));}
+document.querySelectorAll('.quiz-back-btn').forEach(b=>{b.addEventListener('click',()=>{const g=parseInt(b.dataset.go);goStep(g);});});
+// Card options
+document.querySelectorAll('.quiz-card').forEach(c=>{c.addEventListener('click',function(){this.closest('.quiz-cards').querySelectorAll('.quiz-card').forEach(x=>x.classList.remove('sel'));this.classList.add('sel');});});
+// Text options
+document.querySelectorAll('.quiz-opt').forEach(o=>{o.addEventListener('click',function(){this.closest('.quiz-opts').querySelectorAll('.quiz-opt').forEach(x=>x.classList.remove('sel'));this.classList.add('sel');});});
+// Slider
+const slider=document.getElementById('areaSlider'),valEl=document.getElementById('sliderVal');
+function updateSlider(){
+  const v=slider.value,mn=slider.min,mx=slider.max;
+  valEl.innerHTML=v+' <span>м²</span>';
+  const pct=(v-mn)/(mx-mn)*100;
+  slider.style.background=`linear-gradient(to right,var(--gold) 0%,var(--gold) ${pct}%,#e0e0e0 ${pct}%,#e0e0e0 100%)`;
+}
+slider.addEventListener('input',updateSlider);updateSlider();
+// Quiz submit
+document.getElementById('qsubmit').addEventListener('click',()=>{document.getElementById('qfinal').style.display='none';document.getElementById('qsuccess').style.display='block';});
+
+// FAQ
+document.querySelectorAll('.faq-item').forEach(item=>{item.querySelector('.faq-q').addEventListener('click',()=>{const was=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!was)item.classList.add('open');});});
+
+// MODAL
+function openModal(){document.getElementById('modal').classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';}
+document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)closeModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+
+// COMPARE
+const wrap=document.getElementById('cmpWrap'),after=document.getElementById('cmpAfter'),handle=document.getElementById('cmpHandle');
+let drag=false;
+function setPos(x){const r=wrap.getBoundingClientRect();let p=Math.max(5,Math.min(95,(x-r.left)/r.width*100));after.style.clipPath=`inset(0 ${100-p}% 0 0)`;handle.style.left=p+'%';}
+handle.addEventListener('mousedown',()=>drag=true);
+document.addEventListener('mouseup',()=>drag=false);
+document.addEventListener('mousemove',e=>{if(drag)setPos(e.clientX);});
+handle.addEventListener('touchstart',e=>{drag=true;e.preventDefault();},{passive:false});
+document.addEventListener('touchend',()=>drag=false);
+document.addEventListener('touchmove',e=>{if(drag)setPos(e.touches[0].clientX);},{passive:true});
+</script>
+</body>
+</html>
