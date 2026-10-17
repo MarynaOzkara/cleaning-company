@@ -142,6 +142,9 @@ h1,h2,h3,h4{font-family:'Cormorant Infant',serif}
 .drawer a:hover{color:var(--gold)}
 .doverlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:940;display:none}
 .doverlay.open{display:block}
+.drawer-close{align-self:flex-end;width:3.6rem;height:3.6rem;border-radius:50%;background:rgba(255,255,255,.08);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .3s;margin-bottom:.5rem}
+.drawer-close:hover{background:var(--gold)}
+.drawer-close svg{width:1.6rem;height:1.6rem;fill:#fff}
 
 /* RIGHT WIDGET */
 .rwidget{
@@ -470,10 +473,10 @@ input[type=range]::-moz-range-thumb{
   .section{padding:5rem 0}
   html{font-size:9px}
 
-  .header-nav,.header-right{display:none}
-  .burger{display:flex}
-
+  .header-nav,.header-contacts{display:none}
   .hero-top{display:none}
+  .header-mob{display:none}
+  .burger{display:flex}
   .hero-h1{font-size:4rem}
   .hero-feats{gap:1.5rem}
   .hero-feat-ic{width:3.2rem;height:3.2rem}
@@ -509,7 +512,7 @@ input[type=range]::-moz-range-thumb{
   .footer-inner{flex-direction:column;align-items:center;text-align:center}
   .footer-meta{text-align:center}
 
-  .rwidget{display:none}
+  
 }
 </style>
 </head>
@@ -520,7 +523,7 @@ input[type=range]::-moz-range-thumb{
   <div class="container">
     <div class="header-inner">
       <a href="#" class="header-logo">Clean<span>Home</span></a>
-      <p class="hero-top-phone-sub"><b>Прибирання квартир</b></br>в Південноукраїнську</p>
+      <p class="hero-top-phone-sub header-mob"><b>Прибирання квартир</b></br>в Південноукраїнську</p>
       <a href="#quiz" class="btn btn--sm">Замовити прибирання</a>
         <div class="header-contacts">
           <p class="hero-top-phone-sub">Є питання? Пишіть нам!</p>
@@ -547,6 +550,9 @@ input[type=range]::-moz-range-thumb{
 <!-- DRAWER -->
 <div class="doverlay" id="doverlay"></div>
 <nav class="drawer" id="drawer">
+  <button class="drawer-close" id="drawerClose" aria-label="Закрити меню">
+    <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+  </button>
   <a href="#tarifs">Тарифи</a>
   <a href="#why">Про нас</a>
   <a href="#steps">Як працюємо</a>
@@ -601,7 +607,7 @@ input[type=range]::-moz-range-thumb{
     </div>
     <div class="hero-cta-note">
       <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm.01 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
-      Вишлемо розрахунок вартості по кожному виду робіт
+      Вишлемо розрахунок вартості<br/> по кожному виду робіт
     </div>
     <div class="hero-feats" style="margin-top:4rem">
       <div class="hero-feat">
@@ -1027,6 +1033,7 @@ const burger=document.getElementById('burger'),drawer=document.getElementById('d
 function toggleDrawer(){burger.classList.toggle('open');drawer.classList.toggle('open');dov.classList.toggle('open');document.body.style.overflow=drawer.classList.contains('open')?'hidden':'';}
 burger.addEventListener('click',toggleDrawer);
 dov.addEventListener('click',toggleDrawer);
+document.getElementById('drawerClose').addEventListener('click',toggleDrawer);
 drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{if(drawer.classList.contains('open'))toggleDrawer();}));
 
 // FADE IN
