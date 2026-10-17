@@ -156,7 +156,7 @@ h1,h2,h3,h4{font-family:'Cormorant Infant',serif}
   background:var(--gold);color:#fff;
   padding:3rem 1rem 3rem 2rem;
   border-radius:12px 0 0 12px;
-  font-family:'Ubuntu',sans-serif;font-size:1.1rem;font-weight:500;
+  font-family:'Ubuntu',sans-serif;font-size:1.5rem;font-weight:500;
   white-space:nowrap;
   transform:translateX(calc(100% - 4.2rem));
   transition:transform .3s;
@@ -174,15 +174,10 @@ h1,h2,h3,h4{font-family:'Cormorant Infant',serif}
   background:url('https://images.unsplash.com/photo-1758273705627-937374bfa978?w=1600&fit=crop&crop=entropy&q=80&auto=format') center/cover no-repeat;
   padding-top:5.5rem;
 }
-.hero::before{content:'';position:absolute;inset:0;background:rgba(15,15,17,.72)}
+.hero::before{content:'';position:absolute;inset:0;background:rgba(15,15,17,.56)}
 .hero-top{
   position:relative;z-index:2;
   border-bottom:1px solid rgba(255,255,255,.08);
-}
-.hero-top-pdf{
-  display:inline-flex;align-items:center;gap:.8rem;
-  background:#fff;color:var(--text);padding:.9rem 2.2rem;border-radius:var(--r-pill);
-  font-size:1.2rem;font-weight:500;transition:background .3s;
 }
 .hero-top-pdf:hover{background:var(--gold-ring)}
 .hero-top-pdf strong{color:var(--gold)}
@@ -206,6 +201,41 @@ h1,h2,h3,h4{font-family:'Cormorant Infant',serif}
 .hero-cta-note{display:flex;align-items:center;gap:1rem;color:rgba(255,255,255,.7);font-size:1.3rem}
 .hero-cta-note svg{width:2rem;height:2rem;fill:var(--gold);flex-shrink:0}
 .hero-cta-note a{color:var(--gold)}
+.hero-cta-note p{font-size: 1.5rem}
+.hero-time-img img{width: 1.09375vw;}
+.hero-time-img{display: flex;justify-content: center;align-items: center;border-radius: 50%;width: 1.823vw;height: 1.823vw;background-color: #fff;position: relative;z-index: 1;margin-right: 1.51vw;}
+.hero-time-img::before{content: '';position: absolute;top: 0;left: 0;width: 100%;height: 100%;background-color: #fff;opacity: .2;border-radius: 50%;-webkit-animation: animPulse 2s linear infinite;animation: animPulse 2s linear infinite;z-index: -1;}
+@-webkit-keyframes animPulse {
+    0% {
+        opacity: 0;
+        transform: scale(1)
+    }
+
+    50% {
+        opacity: .5
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.8)
+    }
+}
+
+@keyframes animPulse {
+    0% {
+        opacity: 0;
+        transform: scale(1)
+    }
+
+    50% {
+        opacity: .5
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.8)
+    }
+}
 .hero-feats{display:flex;gap:3rem;flex-wrap:wrap;justify-content:center;animation:fadeUp 1.2s both .4s}
 .hero-feat{display:flex;align-items:center;gap:.8rem}
 .hero-feat-ic{width:3.5rem;height:3.5rem;border-radius:50%;background:rgba(201,168,76,.18);border:1px solid rgba(201,168,76,.35);display:flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -217,23 +247,23 @@ h1,h2,h3,h4{font-family:'Cormorant Infant',serif}
 /* ============ QUIZ ============ */
 .quiz-section{background:#fff;padding:7rem 0}
 .quiz-head{text-align:center;margin-bottom:5rem}
-.quiz-head h2{font-family:'Cormorant Infant',serif;font-size:clamp(3rem,4vw,5.5rem);font-weight:700;line-height:1.15;margin-bottom:1.2rem}
-.quiz-head p{font-size:1.6rem;color:var(--text2)}
+.quiz-head p{font-size:1.875vw;color:var(--text2)}
 .quiz-wrap{
   display:grid;grid-template-columns:1fr 2fr;gap:3rem;
   background:#fff;border-radius:var(--r-quiz);
   box-shadow:0 4px 60px rgba(0,0,0,.1);overflow:hidden;
 }
 .quiz-left{
-  background:url('https://images.unsplash.com/photo-1691496550053-80260c93db8f?w=800&fit=crop&crop=entropy&q=80&auto=format') center/cover no-repeat;
+  background:url('https://images.unsplash.com/photo-1771244670407-42e9585ab333?w=800&fit=crop&crop=entropy&q=80&auto=format') center/cover no-repeat;
   position:relative;padding:3rem 2.5rem;
   display:flex;flex-direction:column;justify-content:flex-end;min-height:52rem;
 }
-.quiz-left::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,12,.9) 50%,rgba(10,10,12,.5))}
+.quiz-left::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,12,.9) 50%,rgba(10,10,12,.19))}
 .quiz-left-cnt{position:relative;z-index:1}
 .quiz-left-cnt h3{font-family:'Cormorant Infant',serif;font-size:2.8rem;font-weight:300;color:#fff;margin-bottom:.8rem}
 .quiz-left-cnt h3 strong{font-weight:700}
-.quiz-left-cnt p{font-size:1.3rem;color:rgba(255,255,255,.65);line-height:1.6;margin-bottom:2rem}
+.accent{color:var(--gold)}
+.quiz-left-cnt p{font-size:1.5rem;color:rgba(255,255,255,.65);line-height:1.6;margin-bottom:2rem}
 .quiz-badge{display:flex;align-items:center;gap:.8rem;padding:1.2rem 1.6rem;border-radius:var(--r-card);background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3)}
 .quiz-badge-text{font-size:1.2rem;color:#fff;line-height:1.5}
 .quiz-badge-text strong{color:var(--gold);display:block;font-size:1.4rem}
@@ -245,7 +275,7 @@ h1,h2,h3,h4{font-family:'Cormorant Infant',serif}
 
 .quiz-step{display:none}
 .quiz-step.active{display:block}
-.quiz-q{font-family:'Cormorant Infant',serif;font-size:2.8rem;font-weight:600;margin-bottom:2.5rem;line-height:1.2}
+.quiz-q{font-family:'Cormorant Infant',serif;font-size:1.875vw;font-weight:600;margin-bottom:2.5rem;line-height:1.2}
 
 /* Card options (with images like Screenshot_8) */
 .quiz-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-bottom:2rem}
@@ -348,9 +378,9 @@ input[type=range]::-moz-range-thumb{
   height:50rem;user-select:none;
 }
 .cmp-before,.cmp-after{position:absolute;inset:0;background:center/cover no-repeat}
-.cmp-before{background-image:url('https://images.unsplash.com/photo-1644682533649-58c09f74b03c?w=1200&fit=crop&crop=entropy&q=80&auto=format')}
-.cmp-after{background-image:url('https://images.unsplash.com/photo-1724582586529-62622e50c0b3?w=1200&fit=crop&crop=entropy&q=80&auto=format');clip-path:inset(0 50% 0 0)}
-.cmp-handle{position:absolute;top:0;bottom:0;left:50%;width:4px;background:#fff;transform:translateX(-50%);z-index:10;cursor:ew-resize}
+.cmp-before{background-image:url('https://images.unsplash.com/photo-1724582586529-62622e50c0b3?w=1200&fit=crop&crop=entropy&q=80&auto=format')}
+.cmp-after{background-image:url('https://images.unsplash.com/photo-1644682533649-58c09f74b03c?w=1200&fit=crop&crop=entropy&q=80&auto=format');clip-path:inset(0 70% 0 0)}
+.cmp-handle{position:absolute;top:0;bottom:0;left:30%;width:4px;background:#fff;transform:translateX(-50%);z-index:10;cursor:ew-resize}
 .cmp-circle{
   position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
   width:5.5rem;height:5.5rem;border-radius:50%;background:var(--gold);
@@ -401,12 +431,12 @@ input[type=range]::-moz-range-thumb{
 .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 4rem;margin-top:4rem}
 .faq-item{border-bottom:1.5px solid var(--line-light)}
 .faq-q{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:2rem 0;cursor:pointer}
-.faq-q-txt{font-size:1.6rem;font-weight:500;line-height:1.4}
+.faq-q-txt{font-size:1.8rem;font-weight:500;line-height:1.4}
 .faq-arr{width:1.6rem;height:1.6rem;flex-shrink:0;color:var(--gold);transition:transform .3s}
 .faq-item.open .faq-arr{transform:rotate(180deg)}
 .faq-ans{max-height:0;overflow:hidden;transition:max-height .35s,padding .35s}
 .faq-item.open .faq-ans{max-height:500px;padding-bottom:2rem}
-.faq-ans p{font-size:1.45rem;color:var(--text2);line-height:1.75}
+.faq-ans p{font-size:1.6rem;color:var(--text2);line-height:1.75}
 
 /* ============ CALL / FORM ============ */
 .call-section{background:var(--dark);border-radius:4rem;margin:0 3rem 7rem;overflow:hidden}
@@ -478,6 +508,8 @@ input[type=range]::-moz-range-thumb{
   .header-mob{display:none}
   .burger{display:flex}
   .hero-h1{font-size:4rem}
+  .hero-time-img{width: 1.823rem;height: 1.823rem}
+  .hero-time-img img{width: 1.09375rem;}
   .hero-feats{gap:1.5rem}
   .hero-feat-ic{width:3.2rem;height:3.2rem}
   .hero-feat-ic svg{width:1.4rem;height:1.4rem}
@@ -565,7 +597,7 @@ input[type=range]::-moz-range-thumb{
 <div class="rwidget">
   <a href="tel:+380XXXXXXXXX" class="rwbtn rwbtn--call">
     <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-    Передзвонити нам
+    Подзвонити нам
   </a>
   <a href="https://t.me/MarusyaOzkara" class="rwbtn rwbtn--tg" target="_blank">
     <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
@@ -606,8 +638,11 @@ input[type=range]::-moz-range-thumb{
       <a href="#call" class="btn btn--outline" style="font-size:1.5rem;padding:1.8rem 4rem">Замовити прибирання</a>
     </div>
     <div class="hero-cta-note">
-      <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm.01 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
-      Вишлемо розрахунок вартості<br/> по кожному виду робіт
+      <div class="hero-time-img">
+        <img src="./images/icons/clock.svg" alt="Clock icon"/>
+      </div>
+      <p>Вишлемо розрахунок вартості<br/><span class="accent">по кожному виду робіт</span></p>
+      
     </div>
     <div class="hero-feats" style="margin-top:4rem">
       <div class="hero-feat">
@@ -634,14 +669,14 @@ input[type=range]::-moz-range-thumb{
 <section class="quiz-section" id="quiz">
   <div class="container">
     <div class="quiz-head">
-      <h2>Розрахуйте <em style="font-style:normal">вартість</em> прибирання<br>вашої квартири</h2>
+      <h2 class="section-h2"><strong>Розрахуйте вартість прибирання</strong><br>вашої квартири</h2>
       <p>Це безкоштовно і ні до чого не зобов'язує</p>
     </div>
     <div class="quiz-wrap">
       <!-- LEFT -->
       <div class="quiz-left">
         <div class="quiz-left-cnt">
-          <h3>Виберіть відповідь<br><strong>та натисніть далі</strong></h3>
+          <h3><strong class="accent">Виберіть відповідь</strong><br>та натисніть далі</h3>
           <p>Наприкінці тесту ви дізнаєтесь вартість з точністю 90% та отримаєте пропозицію на перше замовлення</p>
           <div class="quiz-badge">
             <div class="quiz-badge-text">
@@ -822,7 +857,6 @@ input[type=range]::-moz-range-thumb{
 <!-- ========= COMPARE ========= -->
 <section class="section compare-section" id="compare">
   <div class="container">
-    <div class="section-tag tac">До і після</div>
     <h2 class="section-h2 tac">Результат, який<br><strong>говорить сам за себе</strong></h2>
     <p class="compare-desc">Перетягніть повзунок, щоб побачити різницю. Ми повертаємо вашому дому той вигляд, яким ви хочете його бачити щодня.</p>
     <div class="compare-wrap" id="cmpWrap">
@@ -953,7 +987,7 @@ input[type=range]::-moz-range-thumb{
     <div class="contacts-row">
       <div class="ci"><div class="ci-ic"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div><div><div class="ci-lbl">Телефон</div><a href="tel:+380XXXXXXXXX" class="ci-val">+380 XX XXX XX XX</a></div></div>
       <div class="ci"><div class="ci-ic"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div><div><div class="ci-lbl">Email</div><a href="mailto:info@cleanhome.com.ua" class="ci-val">info@cleanhome.com.ua</a></div></div>
-      <div class="ci"><div class="ci-ic"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div><div><div class="ci-lbl">Місто</div><div class="ci-val">Київ, Україна</div></div></div>
+      <div class="ci"><div class="ci-ic"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div><div><div class="ci-lbl">Місто</div><div class="ci-val">Південноукраїнськ</div></div></div>
       <div>
         <div class="ci-lbl" style="color:rgba(255,255,255,.35);font-size:1rem;text-transform:uppercase;letter-spacing:.2em;margin-bottom:.8rem">Соцмережі</div>
         <div class="ci-socs">
