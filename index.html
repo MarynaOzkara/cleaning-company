@@ -11,9 +11,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --gold:#C9A84C;
+  --gold:#bc9650;
   --gold-hover:#dbb85a;
-  --gold-light:#b8953f;
+  --gold-light:#ddbc78;
   --gold-ring:#f0e0a8;
   --dark:#19191b;
   --dark2:#1e1e1e;
@@ -23,6 +23,7 @@
   --text2:#6a6a6a;
   --line-light:rgba(40,39,40,0.12);
   --line-dark:rgba(255,255,255,0.12);
+  --gradient: linear-gradient(180deg, #ddbc78, #bc9650);
   --tg:#00a2f2;
   --viber:#7460f3;
   --r-pill:100px;
@@ -51,13 +52,13 @@ h1,h2,h3,h4{font-family:'Cormorant Infant',serif}
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:.6em;
   padding:1.5rem 3.2rem;border-radius:var(--r-pill);
-  background:var(--gold);color:#fff;
+  background:var(--gradient);color:#fff;
   font-family:'Ubuntu',sans-serif;font-size:1.3rem;font-weight:500;
   text-transform:uppercase;letter-spacing:.15em;
   border:none;cursor:pointer;position:relative;overflow:hidden;
   transition:background .3s,transform .2s;white-space:nowrap;
 }
-.btn:hover{background:var(--gold-hover);transform:translateY(-1px)}
+.btn:hover{transform:translateY(-1px)}
 .btn-blick{position:absolute;top:-50%;left:-60px;width:30px;height:300%;background:rgba(255,255,255,.25);transform:rotate(45deg);animation:blick 3.5s infinite}
 @keyframes blick{0%{left:-60px}30%,100%{left:120%}}
 .btn--sm{padding:1rem 2rem;font-size:1.1rem}
@@ -195,7 +196,7 @@ h1,h2,h3,h4{font-family:'Cormorant Infant',serif}
   font-weight:300;color:#fff;line-height:1.15;margin-bottom:3rem;
   animation:fadeUp 1.2s both;
 }
-.hero-h1 strong{font-weight:700;color:var(--gold)}
+.hero-h1 strong{font-weight:700;color:var(--gold-hover)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
 .hero-cta-wrap{display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:4rem;animation:fadeUp 1.2s both .2s}
 .hero-cta-note{display:flex;align-items:center;gap:1rem;color:rgba(255,255,255,.7);font-size:1.3rem}
